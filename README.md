@@ -7,3 +7,7 @@ Promoting a business takes effort. There are a variety of ways to do it. Traditi
 Web marketing takes your message to the big wide web. With tons of people using the internet every day, there are huge opportunities to get your product or service in front of people who need or want it.
 
 Drilling down into it, web marketing takes many forms. Banner ads, email promotions, and social media posting are three of the ones you have probably heard about. They, and more, live under the “web marketing” umbrella.
+<h4>Take Look On Demo </h4>
+<img src=images1/1.png></img>
+<img src=images1/2.png></img>
+<img src=images1/3.png></img>
