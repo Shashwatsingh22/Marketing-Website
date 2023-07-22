@@ -3,7 +3,7 @@ name: Deploy HTML with Nginx using Self-hosted Runner
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
