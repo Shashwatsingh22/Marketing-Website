@@ -33,7 +33,7 @@ jobs:
           EOF
 
           #Remove existing conf file
-          sudo rm -f /etc/nginx/sites-available/test
+          sudo rm -f /etc/nginx/sites-enabled/test
 
           # Enable the default site
           sudo ln -s /etc/nginx/sites-available/test /etc/nginx/sites-enabled/
