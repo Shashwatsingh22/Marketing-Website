@@ -21,7 +21,7 @@ jobs:
       - name: Configure Nginx
         run: |
           # Replace 'example.com' with your actual domain or IP address
-          sudo tee /etc/nginx/sites-available/default <<EOF
+          sudo tee /etc/nginx/sites-available/test <<EOF
           server {
               listen 0.0.0.0:80;
 
@@ -33,7 +33,7 @@ jobs:
           EOF
 
           # Enable the default site
-          sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+          sudo ln -s /etc/nginx/sites-available/test /etc/nginx/sites-enabled/
 
           # Remove the default Nginx welcome page
           sudo rm /var/www/html/index.nginx-debian.html
