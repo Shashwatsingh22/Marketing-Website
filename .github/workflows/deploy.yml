@@ -38,9 +38,6 @@ jobs:
           # Enable the default site
           sudo ln -s /etc/nginx/sites-available/test /etc/nginx/sites-enabled/
 
-          # Remove the default Nginx welcome page
-          sudo rm /var/www/html/index.nginx-debian.html
-
       - name: Copy HTML files
         run: |
           # Replace 'path/to/html/files' with the actual path to your HTML files
