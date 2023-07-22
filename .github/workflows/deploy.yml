@@ -1,0 +1,53 @@
+name: Deploy HTML with Nginx using Self-hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # Use the name of your self-hosted runner here
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Nginx
+        run: |
+          sudo apt update
+          sudo apt install -y nginx
+
+      - name: Configure Nginx
+        run: |
+          # Replace 'example.com' with your actual domain or IP address
+          sudo tee /etc/nginx/sites-available/default <<EOF
+          server {
+              listen 0.0.0.0:80;
+
+              location / {
+                  root /var/www/html;
+                  index index.html;
+              }
+          }
+          EOF
+
+          # Enable the default site
+          sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+
+          # Remove the default Nginx welcome page
+          sudo rm /var/www/html/index.nginx-debian.html
+
+      - name: Copy HTML files
+        run: |
+          # Replace 'path/to/html/files' with the actual path to your HTML files
+          sudo cp -r path/to/html/files /var/www/html/
+
+      - name: Start Nginx
+        run: sudo service nginx start
+
+      - name: Display Deployment Information
+        run: |
+          echo "Your HTML code has been deployed successfully with Nginx!"
+          # Replace 'example.com' with your actual domain or IP address
+          echo "Visit http://192.168.1.20 to see your website."
