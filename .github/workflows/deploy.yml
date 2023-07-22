@@ -41,10 +41,10 @@ jobs:
       - name: Copy HTML files
         run: |
           # Replace 'path/to/html/files' with the actual path to your HTML files
-          sudo cp -r path/to/html/files /var/www/html/
+          sudo cp -r /home/kk/action-runner/_work/Marketing-Website/Marketing-Website /var/www/html/
 
       - name: Start Nginx
-        run: sudo service nginx start
+        run: sudo service nginx restart
 
       - name: Display Deployment Information
         run: |
